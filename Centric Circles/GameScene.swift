@@ -21,12 +21,15 @@ var state: GameState = .Title
 
 class GameScene: SKScene {
     
+    var gameBackground : SKSpriteNode!
     var innerCircle : SKSpriteNode!
     var outerCircle : SKSpriteNode!
     var scoreLabel: SKLabelNode!
     var isTouching  = true
-    var index = 0
+    /* Randomizer for the outer circle */
+    let randomnum = CGFloat.random() % 0.323 + 0.35
     
+    /* Variable for the score system in GameScene */
     var score: Int = highscore {
         didSet {
             scoreLabel.text = String(highscore)
@@ -37,6 +40,8 @@ class GameScene: SKScene {
         
         /* Setup your scene here */
         
+        /* Code connection for the background in GameScene */
+        gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
         /* Code connection for the inner circle in GameScene */
         innerCircle = childNodeWithName("innerCircle") as! SKSpriteNode
         
@@ -46,38 +51,44 @@ class GameScene: SKScene {
         /* Code connection for the score label in GameScene */
         scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
         
+        /* Connects to my highscore string (make sure it was after the scoreLabel code connection) */
         scoreLabel.text = String(highscore)
+        
+        
+        
+        /* Randomizes the scale of the outerCircle */
+        outerCircle.xScale = randomnum
+        outerCircle.yScale = randomnum
 
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
+        
         isTouching = true
-        let scale = SKAction.scaleTo(0.857, duration: 2)
-    
+        /* Scales out the inner circle to reach the outer circle */
         
+        let scale = SKAction.scaleTo(0.82, duration: 2)
+        
+        /* Initiates the action */
         innerCircle.runAction(scale)
-        
-
-        
-        
         
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        
+        /* Stops the inner circle from moving if there is no touch */
         isTouching = false
         innerCircle.removeAllActions()
-        
-        
         
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
+        
+        /* Retracts the circle if it hits a certain scale of the screen */
         let reverseScale = SKAction.scaleTo(0.057, duration: 2)
         
         if innerCircle.xScale >= 0.82 {
@@ -85,8 +96,8 @@ class GameScene: SKScene {
             
         }
         
-        /* If Statement for the condition of circle */
-        if innerCircle.xScale > 0.61 && innerCircle.xScale < 0.725{
+        /* If Statement if the inner circle hits the outer circle in any of it random position */
+        if innerCircle.xScale > randomnum - 0.1 && innerCircle.xScale < randomnum + 0.1{
             
             scoreLabel.text = String(highscore)
             if isTouching == false {
@@ -95,9 +106,9 @@ class GameScene: SKScene {
                 print("Score +1")
                 
                 /* Game Score Label */
-                
-                score += 1
                 highscore += 1
+                
+                
                 
                 
                 /* Grab reference to the SpriteKit view */
@@ -115,12 +126,12 @@ class GameScene: SKScene {
 
             }
         }
-        
+            /* The start position of the inner circle */
         else if innerCircle.xScale < 0.058{
             print("Start")
             
         }
-        
+            /* if the inner circle hits any other area, this will be the fail state */
         else {
             if isTouching == false {
                 print("Lose")
