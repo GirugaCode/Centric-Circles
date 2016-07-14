@@ -20,6 +20,9 @@
 		280868DC1D3506540068B702 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868DB1D3506540068B702 /* MSButtonNode.swift */; };
 		280868DE1D3506BC0068B702 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868DD1D3506BC0068B702 /* StartScene.swift */; };
 		280868E01D3506D10068B702 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 280868DF1D3506D10068B702 /* StartScene.sks */; };
+		28AADABA1D37FA0F00DBBA8B /* GameEffects.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */; };
+		28AADABC1D3814E000DBBA8B /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28AADABB1D3814DF00DBBA8B /* GameOver.sks */; };
+		28AADABE1D3814F400DBBA8B /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AADABD1D3814F400DBBA8B /* GameOver.swift */; };
 		28DE389D1D36BD0A00D1BED4 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE38911D36BD0A00D1BED4 /* CGFloat+Extensions.swift */; };
 		28DE389E1D36BD0A00D1BED4 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE38921D36BD0A00D1BED4 /* CGPoint+Extensions.swift */; };
 		28DE389F1D36BD0A00D1BED4 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE38931D36BD0A00D1BED4 /* CGVector+Extensions.swift */; };
@@ -71,6 +74,9 @@
 		280868DB1D3506540068B702 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		280868DD1D3506BC0068B702 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		280868DF1D3506D10068B702 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+		28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameEffects.sks; sourceTree = "<group>"; };
+		28AADABB1D3814DF00DBBA8B /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		28AADABD1D3814F400DBBA8B /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		28DE38911D36BD0A00D1BED4 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		28DE38921D36BD0A00D1BED4 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		28DE38931D36BD0A00D1BED4 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
@@ -136,10 +142,13 @@
 				280868D91D35064D0068B702 /* MSReferenceNode.swift */,
 				280868DB1D3506540068B702 /* MSButtonNode.swift */,
 				280868A71D3506330068B702 /* AppDelegate.swift */,
-				280868AB1D3506330068B702 /* GameScene.swift */,
-				280868A91D3506330068B702 /* GameScene.sks */,
+				28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */,
 				280868DD1D3506BC0068B702 /* StartScene.swift */,
 				280868DF1D3506D10068B702 /* StartScene.sks */,
+				280868AB1D3506330068B702 /* GameScene.swift */,
+				280868A91D3506330068B702 /* GameScene.sks */,
+				28AADABD1D3814F400DBBA8B /* GameOver.swift */,
+				28AADABB1D3814DF00DBBA8B /* GameOver.sks */,
 				280868AD1D3506330068B702 /* GameViewController.swift */,
 				280868AF1D3506330068B702 /* Main.storyboard */,
 				280868B21D3506330068B702 /* Assets.xcassets */,
@@ -292,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AADABA1D37FA0F00DBBA8B /* GameEffects.sks in Resources */,
+				28AADABC1D3814E000DBBA8B /* GameOver.sks in Resources */,
 				280868AA1D3506330068B702 /* GameScene.sks in Resources */,
 				280868B61D3506330068B702 /* LaunchScreen.storyboard in Resources */,
 				280868B31D3506330068B702 /* Assets.xcassets in Resources */,
@@ -322,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				280868AC1D3506330068B702 /* GameScene.swift in Sources */,
+				28AADABE1D3814F400DBBA8B /* GameOver.swift in Sources */,
 				28DE38A71D36BD0A00D1BED4 /* SKTTimingFunctions.swift in Sources */,
 				280868DE1D3506BC0068B702 /* StartScene.swift in Sources */,
 				28DE389F1D36BD0A00D1BED4 /* CGVector+Extensions.swift in Sources */,
