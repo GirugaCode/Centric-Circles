@@ -10,7 +10,7 @@ import SpriteKit
 
 /* Universal Variable */
 var highscore = 0
-
+var newscore = 0
 /* Game States */
 enum GameState{
     case Title, Ready, Playing, Pause, GameOver
@@ -19,13 +19,16 @@ enum GameState{
 /* Game management */
 var state: GameState = .Title
 
+
 class GameScene: SKScene {
     
     var gameBackground : SKSpriteNode!
     var innerCircle : SKSpriteNode!
     var outerCircle : SKSpriteNode!
     var scoreLabel: SKLabelNode!
+    var instuctions: SKLabelNode!
     var isTouching  = true
+    
     /* Randomizer for the outer circle */
     let randomnum = CGFloat.random() % 0.423 + 0.2
     
@@ -51,10 +54,25 @@ class GameScene: SKScene {
         /* Code connection for the score label in GameScene */
         scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
         
+        instuctions = childNodeWithName("instuctions") as! SKLabelNode
+        
         /* Connects to my highscore string (make sure it was after the scoreLabel code connection) */
         scoreLabel.text = String(highscore)
         
         
+        if highscore <= 0 {
+            
+            instuctions.zPosition = 3
+        }
+        
+        if highscore%10 == 0  {
+            colors.color.changecolors()
+            
+        }
+        
+        gameBackground.color = colors.color.gameBackgroundColor
+        innerCircle.color = colors.color.innerCircleColor
+        outerCircle.color = colors.color.outerCircleColor
         
         /* Randomizes the scale of the outerCircle */
         outerCircle.xScale = randomnum
@@ -66,13 +84,19 @@ class GameScene: SKScene {
         /* Called when a touch begins */
         
         
+        
         isTouching = true
         /* Scales out the inner circle to reach the outer circle */
         
         let scale = SKAction.scaleTo(0.82, duration: 2)
         
+        
+        
         /* Initiates the action */
         innerCircle.runAction(scale)
+        
+
+        
         
     }
     
@@ -80,15 +104,16 @@ class GameScene: SKScene {
         
         /* Stops the inner circle from moving if there is no touch */
         isTouching = false
-        
-
-        
         innerCircle.removeAllActions()
         
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        
+    
+
+        
         
         
         /* Retracts the circle if it hits a certain scale of the screen */
@@ -110,10 +135,9 @@ class GameScene: SKScene {
                 
                 /* Game Score Label */
                 highscore += 1
-                
-                
-                
-                
+
+
+            
                 /* Grab reference to the SpriteKit view */
                 let skView = self.view as SKView!
                 
@@ -125,6 +149,8 @@ class GameScene: SKScene {
                 
                 /* Restart GameScene */
                 skView.presentScene(scene)
+                
+
                 
 
             }
@@ -139,19 +165,18 @@ class GameScene: SKScene {
             if isTouching == false {
                 print("Lose")
                 
+                removeAllActions()
+                
                 /* Load the shake action resource */
                 let shakeScene:SKAction = SKAction.init(named: "Shake")!
                 
                 /* Loop through all nodes  */
                 for node in self.children {
+            
+                /* Apply effect each ground node */
+                node.runAction(shakeScene)
                     
-                    /* Apply effect each ground node */
-                    node.runAction(shakeScene)
-                
-                }
-                
-                
-                removeAllActions()
+                    }
                 
                 /* Transitions into GameOver if fail state happens */
                 
@@ -159,30 +184,27 @@ class GameScene: SKScene {
                 
                 gameSceneTemp!.scaleMode = .AspectFill
                 
-                
                 self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1.2))
-                
-               
-                
-                
-                
-//                /* Grab reference to the SpriteKit view */
-//                let skView = self.view as SKView!
-//                
-//                /* Load Game scene */
-//                let scene = GameScene(fileNamed:"GameScene") as GameScene!
-//                
-//                /* Ensure correct aspect mode */
-//                scene.scaleMode = .AspectFill
-//                
-//                /* Restart GameScene */
-//                skView.presentScene(scene)
-                
 
             }
             
         }
+        
     }
     
+
+    
+//    func shakeScreen() {
+//        /* Load the shake action resource */
+//            let shakeScene:SKAction = SKAction.init(named: "Shake")!
+//    
+//        /* Loop through all nodes  */
+//            for node in self.children {
+//        
+//            /* Apply effect each ground node */
+//            node.runAction(shakeScene)
+//                        
+//                }
+//    }
     
 }

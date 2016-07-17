@@ -20,6 +20,7 @@
 		280868DC1D3506540068B702 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868DB1D3506540068B702 /* MSButtonNode.swift */; };
 		280868DE1D3506BC0068B702 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868DD1D3506BC0068B702 /* StartScene.swift */; };
 		280868E01D3506D10068B702 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 280868DF1D3506D10068B702 /* StartScene.sks */; };
+		28145D321D398406000C66ED /* ColorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28145D311D398406000C66ED /* ColorChange.swift */; };
 		28AADABA1D37FA0F00DBBA8B /* GameEffects.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */; };
 		28AADABC1D3814E000DBBA8B /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28AADABB1D3814DF00DBBA8B /* GameOver.sks */; };
 		28AADABE1D3814F400DBBA8B /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AADABD1D3814F400DBBA8B /* GameOver.swift */; };
@@ -74,6 +75,7 @@
 		280868DB1D3506540068B702 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		280868DD1D3506BC0068B702 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		280868DF1D3506D10068B702 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+		28145D311D398406000C66ED /* ColorChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorChange.swift; sourceTree = "<group>"; };
 		28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameEffects.sks; sourceTree = "<group>"; };
 		28AADABB1D3814DF00DBBA8B /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
 		28AADABD1D3814F400DBBA8B /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				280868DF1D3506D10068B702 /* StartScene.sks */,
 				280868AB1D3506330068B702 /* GameScene.swift */,
 				280868A91D3506330068B702 /* GameScene.sks */,
+				28145D311D398406000C66ED /* ColorChange.swift */,
 				28AADABD1D3814F400DBBA8B /* GameOver.swift */,
 				28AADABB1D3814DF00DBBA8B /* GameOver.sks */,
 				280868AD1D3506330068B702 /* GameViewController.swift */,
@@ -345,6 +348,7 @@
 				28DE38A41D36BD0A00D1BED4 /* SKNode+Extensions.swift in Sources */,
 				28DE38A11D36BD0A00D1BED4 /* SKAction+Extensions.swift in Sources */,
 				28DE38A21D36BD0A00D1BED4 /* SKAction+SpecialEffects.swift in Sources */,
+				28145D321D398406000C66ED /* ColorChange.swift in Sources */,
 				280868A81D3506330068B702 /* AppDelegate.swift in Sources */,
 				280868DC1D3506540068B702 /* MSButtonNode.swift in Sources */,
 				28DE38A61D36BD0A00D1BED4 /* SKTEffects.swift in Sources */,
