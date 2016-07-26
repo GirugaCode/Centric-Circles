@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		280868A81D3506330068B702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868A71D3506330068B702 /* AppDelegate.swift */; };
-		280868AA1D3506330068B702 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 280868A91D3506330068B702 /* GameScene.sks */; };
-		280868AC1D3506330068B702 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868AB1D3506330068B702 /* GameScene.swift */; };
 		280868AE1D3506330068B702 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868AD1D3506330068B702 /* GameViewController.swift */; };
 		280868B11D3506330068B702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280868AF1D3506330068B702 /* Main.storyboard */; };
 		280868B31D3506330068B702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280868B21D3506330068B702 /* Assets.xcassets */; };
@@ -18,12 +16,15 @@
 		280868CC1D3506330068B702 /* Centric_CirclesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868CB1D3506330068B702 /* Centric_CirclesUITests.swift */; };
 		280868DA1D35064D0068B702 /* MSReferenceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868D91D35064D0068B702 /* MSReferenceNode.swift */; };
 		280868DC1D3506540068B702 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868DB1D3506540068B702 /* MSButtonNode.swift */; };
-		280868DE1D3506BC0068B702 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868DD1D3506BC0068B702 /* StartScene.swift */; };
-		280868E01D3506D10068B702 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 280868DF1D3506D10068B702 /* StartScene.sks */; };
-		28145D321D398406000C66ED /* ColorChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28145D311D398406000C66ED /* ColorChange.swift */; };
-		28AADABA1D37FA0F00DBBA8B /* GameEffects.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */; };
-		28AADABC1D3814E000DBBA8B /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28AADABB1D3814DF00DBBA8B /* GameOver.sks */; };
-		28AADABE1D3814F400DBBA8B /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AADABD1D3814F400DBBA8B /* GameOver.swift */; };
+		281511D01D40366C00694F28 /* scoreParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 281511CE1D40366C00694F28 /* scoreParticle.sks */; };
+		281511D11D40366C00694F28 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 281511CF1D40366C00694F28 /* bokeh.png */; };
+		284C596B1D47E41B009DBCE0 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C596A1D47E41B009DBCE0 /* StartScene.swift */; };
+		284C596D1D47E421009DBCE0 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 284C596C1D47E421009DBCE0 /* StartScene.sks */; };
+		284C596F1D47E425009DBCE0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C596E1D47E425009DBCE0 /* GameScene.swift */; };
+		284C59711D47E42A009DBCE0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 284C59701D47E42A009DBCE0 /* GameScene.sks */; };
+		284C59731D47E42E009DBCE0 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C59721D47E42E009DBCE0 /* GameOver.swift */; };
+		284C59751D47E434009DBCE0 /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 284C59741D47E434009DBCE0 /* GameOver.sks */; };
+		284C59771D47E442009DBCE0 /* actionSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 284C59761D47E442009DBCE0 /* actionSound.mp3 */; };
 		28DE389D1D36BD0A00D1BED4 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE38911D36BD0A00D1BED4 /* CGFloat+Extensions.swift */; };
 		28DE389E1D36BD0A00D1BED4 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE38921D36BD0A00D1BED4 /* CGPoint+Extensions.swift */; };
 		28DE389F1D36BD0A00D1BED4 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE38931D36BD0A00D1BED4 /* CGVector+Extensions.swift */; };
@@ -58,8 +59,6 @@
 /* Begin PBXFileReference section */
 		280868A41D3506330068B702 /* Centric Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Centric Circles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		280868A71D3506330068B702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		280868A91D3506330068B702 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		280868AB1D3506330068B702 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		280868AD1D3506330068B702 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		280868B01D3506330068B702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		280868B21D3506330068B702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,12 +72,15 @@
 		280868CD1D3506330068B702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280868D91D35064D0068B702 /* MSReferenceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSReferenceNode.swift; sourceTree = "<group>"; };
 		280868DB1D3506540068B702 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
-		280868DD1D3506BC0068B702 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
-		280868DF1D3506D10068B702 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
-		28145D311D398406000C66ED /* ColorChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorChange.swift; sourceTree = "<group>"; };
-		28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameEffects.sks; sourceTree = "<group>"; };
-		28AADABB1D3814DF00DBBA8B /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
-		28AADABD1D3814F400DBBA8B /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		281511CE1D40366C00694F28 /* scoreParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = scoreParticle.sks; path = ../scoreParticle.sks; sourceTree = "<group>"; };
+		281511CF1D40366C00694F28 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bokeh.png; path = ../bokeh.png; sourceTree = "<group>"; };
+		284C596A1D47E41B009DBCE0 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+		284C596C1D47E421009DBCE0 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+		284C596E1D47E425009DBCE0 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		284C59701D47E42A009DBCE0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		284C59721D47E42E009DBCE0 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		284C59741D47E434009DBCE0 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		284C59761D47E442009DBCE0 /* actionSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = actionSound.mp3; sourceTree = "<group>"; };
 		28DE38911D36BD0A00D1BED4 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		28DE38921D36BD0A00D1BED4 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		28DE38931D36BD0A00D1BED4 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
@@ -144,19 +146,20 @@
 				280868D91D35064D0068B702 /* MSReferenceNode.swift */,
 				280868DB1D3506540068B702 /* MSButtonNode.swift */,
 				280868A71D3506330068B702 /* AppDelegate.swift */,
-				28AADAB91D37FA0F00DBBA8B /* GameEffects.sks */,
-				280868DD1D3506BC0068B702 /* StartScene.swift */,
-				280868DF1D3506D10068B702 /* StartScene.sks */,
-				280868AB1D3506330068B702 /* GameScene.swift */,
-				280868A91D3506330068B702 /* GameScene.sks */,
-				28145D311D398406000C66ED /* ColorChange.swift */,
-				28AADABD1D3814F400DBBA8B /* GameOver.swift */,
-				28AADABB1D3814DF00DBBA8B /* GameOver.sks */,
+				284C596A1D47E41B009DBCE0 /* StartScene.swift */,
+				284C596C1D47E421009DBCE0 /* StartScene.sks */,
+				284C596E1D47E425009DBCE0 /* GameScene.swift */,
+				284C59701D47E42A009DBCE0 /* GameScene.sks */,
+				284C59721D47E42E009DBCE0 /* GameOver.swift */,
+				284C59741D47E434009DBCE0 /* GameOver.sks */,
 				280868AD1D3506330068B702 /* GameViewController.swift */,
 				280868AF1D3506330068B702 /* Main.storyboard */,
 				280868B21D3506330068B702 /* Assets.xcassets */,
 				280868B41D3506330068B702 /* LaunchScreen.storyboard */,
 				280868B71D3506330068B702 /* Info.plist */,
+				284C59761D47E442009DBCE0 /* actionSound.mp3 */,
+				281511CE1D40366C00694F28 /* scoreParticle.sks */,
+				281511CF1D40366C00694F28 /* bokeh.png */,
 				28DE38901D36BD0A00D1BED4 /* SKTUtils */,
 			);
 			path = "Centric Circles";
@@ -304,12 +307,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AADABA1D37FA0F00DBBA8B /* GameEffects.sks in Resources */,
-				28AADABC1D3814E000DBBA8B /* GameOver.sks in Resources */,
-				280868AA1D3506330068B702 /* GameScene.sks in Resources */,
+				281511D01D40366C00694F28 /* scoreParticle.sks in Resources */,
+				284C59751D47E434009DBCE0 /* GameOver.sks in Resources */,
+				281511D11D40366C00694F28 /* bokeh.png in Resources */,
 				280868B61D3506330068B702 /* LaunchScreen.storyboard in Resources */,
+				284C59771D47E442009DBCE0 /* actionSound.mp3 in Resources */,
+				284C596D1D47E421009DBCE0 /* StartScene.sks in Resources */,
+				284C59711D47E42A009DBCE0 /* GameScene.sks in Resources */,
 				280868B31D3506330068B702 /* Assets.xcassets in Resources */,
-				280868E01D3506D10068B702 /* StartScene.sks in Resources */,
 				280868B11D3506330068B702 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,10 +340,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280868AC1D3506330068B702 /* GameScene.swift in Sources */,
-				28AADABE1D3814F400DBBA8B /* GameOver.swift in Sources */,
 				28DE38A71D36BD0A00D1BED4 /* SKTTimingFunctions.swift in Sources */,
-				280868DE1D3506BC0068B702 /* StartScene.swift in Sources */,
+				284C59731D47E42E009DBCE0 /* GameOver.swift in Sources */,
+				284C596B1D47E41B009DBCE0 /* StartScene.swift in Sources */,
 				28DE389F1D36BD0A00D1BED4 /* CGVector+Extensions.swift in Sources */,
 				28DE389E1D36BD0A00D1BED4 /* CGPoint+Extensions.swift in Sources */,
 				28DE389D1D36BD0A00D1BED4 /* CGFloat+Extensions.swift in Sources */,
@@ -348,8 +352,8 @@
 				28DE38A41D36BD0A00D1BED4 /* SKNode+Extensions.swift in Sources */,
 				28DE38A11D36BD0A00D1BED4 /* SKAction+Extensions.swift in Sources */,
 				28DE38A21D36BD0A00D1BED4 /* SKAction+SpecialEffects.swift in Sources */,
-				28145D321D398406000C66ED /* ColorChange.swift in Sources */,
 				280868A81D3506330068B702 /* AppDelegate.swift in Sources */,
+				284C596F1D47E425009DBCE0 /* GameScene.swift in Sources */,
 				280868DC1D3506540068B702 /* MSButtonNode.swift in Sources */,
 				28DE38A61D36BD0A00D1BED4 /* SKTEffects.swift in Sources */,
 				28DE38A01D36BD0A00D1BED4 /* Int+Extensions.swift in Sources */,

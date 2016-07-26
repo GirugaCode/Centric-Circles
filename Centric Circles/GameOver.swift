@@ -42,9 +42,6 @@ class GameOver: SKScene {
             
             self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(0.5))
             
-            
-
-       
 
         }
 
@@ -59,9 +56,6 @@ class GameOver: SKScene {
             gameSceneTemp!.scaleMode = .AspectFill
             
             self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(0.5))
-            
-            
-            
             
 
         }

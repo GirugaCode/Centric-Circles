@@ -21,6 +21,7 @@ class StartScene: SKScene {
         scene?.scaleMode = .AspectFill
         
         startPlay = childNodeWithName("startPlay") as! SKSpriteNode
+    
         
     }
     

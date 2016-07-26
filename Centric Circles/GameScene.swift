@@ -1,8 +1,8 @@
 //
 //  GameScene.swift
-//  Centric Circles
+//  Cloud Circles
 //
-//  Created by Danh Phu Nguyen on 7/11/16.
+//  Created by Danh Phu Nguyen on 7/22/16.
 //  Copyright (c) 2016 Ryan Nguyen. All rights reserved.
 //
 
@@ -16,6 +16,7 @@ enum GameState{
     case Title, Ready, Playing, Pause, GameOver
 }
 
+
 /* Game management */
 var state: GameState = .Title
 
@@ -26,11 +27,14 @@ class GameScene: SKScene {
     var innerCircle : SKSpriteNode!
     var outerCircle : SKSpriteNode!
     var scoreLabel: SKLabelNode!
-    var instuctions: SKLabelNode!
-    var isTouching  = true
+    var isTouching = true
+    var hasRandomizedColor = false
+    var innerCircleColor = UIColor.grayColor()
+    var outerCircleColor = UIColor.whiteColor()
+    
     
     /* Randomizer for the outer circle */
-    let randomnum = CGFloat.random() % 0.423 + 0.2
+    var randomnum = CGFloat.random() % 0.423 + 0.2
     
     /* Variable for the score system in GameScene */
     var score: Int = highscore {
@@ -40,82 +44,84 @@ class GameScene: SKScene {
     }
     
     override func didMoveToView(view: SKView) {
-        
         /* Setup your scene here */
         
-        /* Code connection for the background in GameScene */
-        gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
-        /* Code connection for the inner circle in GameScene */
-        innerCircle = childNodeWithName("innerCircle") as! SKSpriteNode
+
         
-        /* Code connection for the outer circle in GameScene */
-        outerCircle = childNodeWithName("outerCircle") as! SKSpriteNode
+        setupCircles()
+        
+        gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
         
         /* Code connection for the score label in GameScene */
         scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
         
-        instuctions = childNodeWithName("instuctions") as! SKLabelNode
-        
         /* Connects to my highscore string (make sure it was after the scoreLabel code connection) */
         scoreLabel.text = String(highscore)
         
-        
-        if highscore <= 0 {
-            
-            instuctions.zPosition = 3
-        }
-        
-        if highscore%10 == 0  {
-            colors.color.changecolors()
-            
-        }
-        
-        gameBackground.color = colors.color.gameBackgroundColor
-        innerCircle.color = colors.color.innerCircleColor
-        outerCircle.color = colors.color.outerCircleColor
-        
-        /* Randomizes the scale of the outerCircle */
-        outerCircle.xScale = randomnum
-        outerCircle.yScale = randomnum
-
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        /* Called when a touch begins */
-        
-        
+       /* Called when a touch begins */
+        state = .Playing
         
         isTouching = true
-        /* Scales out the inner circle to reach the outer circle */
         
-        let scale = SKAction.scaleTo(0.82, duration: 2)
-        
-        
-        
-        /* Initiates the action */
-        innerCircle.runAction(scale)
-        
+        scaleOut()
 
         
-        
     }
+    
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         /* Stops the inner circle from moving if there is no touch */
         isTouching = false
+        
         innerCircle.removeAllActions()
         
+        
     }
-    
+   
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
+        /* Retract circle */
+        reverseScale()
+        
+        /* Condidtion of the color relating to score */
+        Colorruling()
+        
+        /* If Statement if the inner circle hits the outer circle in any of it random position */
+        if innerCircle.xScale > randomnum - 0.05 && innerCircle.xScale < randomnum + 0.05 {
+            if isTouching == false{
+                    resetNodes()
+            }
+        }
+        
+        else if innerCircle.xScale < 0.058 {
+            print("Start")
+        }
+        
+        else {
+            if isTouching == false {
+                print("Lose")
+                transitionToGameOver()
+            }
+        }
+        
+    }
     
-
+    func scaleOut() {
+        /* Scales out the inner circle to reach the outer circle */
+        let scale = SKAction.scaleTo(0.82, duration: 1.5)
         
-        
-        
+        /* Initiates the action */
+        innerCircle.runAction(scale)
+    
+    }
+    
+    
+    func reverseScale() {
         /* Retracts the circle if it hits a certain scale of the screen */
         let reverseScale = SKAction.scaleTo(0.057, duration: 2)
         
@@ -123,88 +129,72 @@ class GameScene: SKScene {
             innerCircle.runAction(reverseScale)
             
         }
+    }
+    
+    func resetNodes() {
+        /* Game Score Label */
+        highscore += 1
+        hasRandomizedColor = false
+        scoreLabel.text = String(highscore)
         
-        /* If Statement if the inner circle hits the outer circle in any of it random position */
-        if innerCircle.xScale > randomnum - 0.05 && innerCircle.xScale < randomnum + 0.05{
-            
-            scoreLabel.text = String(highscore)
-            if isTouching == false {
-                print("Win")
-
-                print("Score +1")
-                
-                /* Game Score Label */
-                highscore += 1
-
-
-            
-                /* Grab reference to the SpriteKit view */
-                let skView = self.view as SKView!
-                
-                /* Load Game scene */
-                let scene = GameScene(fileNamed:"GameScene") as GameScene!
-                
-                /* Ensure correct aspect mode */
-                scene.scaleMode = .AspectFill
-                
-                /* Restart GameScene */
-                skView.presentScene(scene)
-                
-
-                
-
-            }
-        }
-            /* The start position of the inner circle */
-        else if innerCircle.xScale < 0.058{
-            print("Start")
-            
-        }
-            /* if the inner circle hits any other area, this will be the fail state */
-        else {
-            if isTouching == false {
-                print("Lose")
-                
-                removeAllActions()
-                
-                /* Load the shake action resource */
-                let shakeScene:SKAction = SKAction.init(named: "Shake")!
-                
-                /* Loop through all nodes  */
-                for node in self.children {
-            
-                /* Apply effect each ground node */
-                node.runAction(shakeScene)
-                    
-                    }
-                
-                /* Transitions into GameOver if fail state happens */
-                
-                let gameSceneTemp = GameOver(fileNamed: "GameOver")
-                
-                gameSceneTemp!.scaleMode = .AspectFill
-                
-                self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1.2))
-
-            }
-            
-        }
+        let actionSound = SKAction.playSoundFileNamed("actionSound.mp3", waitForCompletion: false)
+        runAction(actionSound)
+        
+        innerCircle.removeFromParent()
+        outerCircle.removeFromParent()
+        
+        setupCircles()
+    
+    }
+    
+    func setupCircles() {
+        innerCircle = SKSpriteNode(imageNamed: "insideCircle")
+        innerCircle.zPosition = 2
+        innerCircle.position = CGPoint(x:161.029,y:283.42)
+        innerCircle.setScale(0.054)
+        innerCircle.color = innerCircleColor
+        innerCircle.colorBlendFactor = 1
+        addChild(innerCircle)
+        
+        outerCircle = SKSpriteNode(imageNamed: "outsideCircle")
+        outerCircle.zPosition = 1
+        outerCircle.position = CGPoint(x:161.029,y:283.42)
+        randomnum = CGFloat.random() % 0.423 + 0.2
+        outerCircle.setScale(randomnum)
+        outerCircle.color = outerCircleColor
+        outerCircle.colorBlendFactor = 1
+        
+        addChild(outerCircle)
         
     }
     
-
+    func randomColor() -> UIColor {
     
-//    func shakeScreen() {
-//        /* Load the shake action resource */
-//            let shakeScene:SKAction = SKAction.init(named: "Shake")!
-//    
-//        /* Loop through all nodes  */
-//            for node in self.children {
-//        
-//            /* Apply effect each ground node */
-//            node.runAction(shakeScene)
-//                        
-//                }
-//    }
+        return UIColor (red:   .random(),
+                        green: .random(),
+                        blue:  .random(),
+                        alpha: 1.0)
+        }
+    
+    
+    func Colorruling() {
+        if (highscore%10 == 0 && highscore != 1) && !hasRandomizedColor {
+            innerCircleColor = randomColor()
+            outerCircleColor = randomColor()
+            gameBackground.color = randomColor()
+            hasRandomizedColor = true
+            innerCircle.color = innerCircleColor
+            outerCircle.color = outerCircleColor
+        }
+    }
+    
+    func transitionToGameOver() {
+        /* Transitions into GameOver if fail state happens */
+        
+        let gameSceneTemp = GameOver(fileNamed: "GameOver")
+        gameSceneTemp!.scaleMode = .AspectFill
+        self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1))
+    
+    }
     
 }
