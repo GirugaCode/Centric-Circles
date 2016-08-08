@@ -33,6 +33,7 @@ class GameScene: SKScene {
     var outerCircleColor = UIColor.whiteColor()
     
     
+    
     /* Randomizer for the outer circle */
     var randomnum = CGFloat.random() % 0.423 + 0.2
     
@@ -46,8 +47,6 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-
-        
         setupCircles()
         
         gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
@@ -57,6 +56,8 @@ class GameScene: SKScene {
         
         /* Connects to my highscore string (make sure it was after the scoreLabel code connection) */
         scoreLabel.text = String(highscore)
+        
+        
         
     }
     
@@ -89,17 +90,18 @@ class GameScene: SKScene {
         reverseScale()
         
         /* Condidtion of the color relating to score */
-        Colorruling()
+        colorRuling()
         
         /* If Statement if the inner circle hits the outer circle in any of it random position */
         if innerCircle.xScale > randomnum - 0.05 && innerCircle.xScale < randomnum + 0.05 {
             if isTouching == false{
                     resetNodes()
+                    soundRuling()
             }
         }
         
         else if innerCircle.xScale < 0.058 {
-            print("Start")
+            //print("Start")
         }
         
         else {
@@ -136,9 +138,6 @@ class GameScene: SKScene {
         highscore += 1
         hasRandomizedColor = false
         scoreLabel.text = String(highscore)
-        
-        let actionSound = SKAction.playSoundFileNamed("actionSound.mp3", waitForCompletion: false)
-        runAction(actionSound)
         
         innerCircle.removeFromParent()
         outerCircle.removeFromParent()
@@ -177,7 +176,7 @@ class GameScene: SKScene {
         }
     
     
-    func Colorruling() {
+    func colorRuling() {
         if (highscore%10 == 0 && highscore != 1) && !hasRandomizedColor {
             innerCircleColor = randomColor()
             outerCircleColor = randomColor()
@@ -187,6 +186,68 @@ class GameScene: SKScene {
             outerCircle.color = outerCircleColor
         }
     }
+
+    
+
+    
+    func soundRuling() {
+        
+        
+        let arrayCounter = String(highscore).characters.map {Int(String($0))!}
+
+        let lastnumber = arrayCounter.last
+        
+        if lastnumber == 1 {
+            let actionSoundOne = SKAction.playSoundFileNamed("soundOne.caf", waitForCompletion: false)
+                runAction(actionSoundOne)
+        }
+        
+        else if lastnumber == 2 {
+            let actionSoundTwo = SKAction.playSoundFileNamed("soundTwo.caf", waitForCompletion: false)
+                runAction(actionSoundTwo)
+        }
+        
+        else if lastnumber == 3 {
+            let actionSoundThree = SKAction.playSoundFileNamed("soundThree.caf", waitForCompletion: false)
+            runAction(actionSoundThree)
+        }
+        
+        else if lastnumber == 4 {
+            let actionSoundFour = SKAction.playSoundFileNamed("soundFour.caf", waitForCompletion: false)
+            runAction(actionSoundFour)
+        }
+        
+        else if lastnumber == 5 {
+            let actionSoundFive = SKAction.playSoundFileNamed("soundFive.caf", waitForCompletion: false)
+            runAction(actionSoundFive)
+        }
+        
+        else if lastnumber == 6 {
+            let actionSoundSix = SKAction.playSoundFileNamed("soundSix.caf", waitForCompletion: false)
+            runAction(actionSoundSix)
+        }
+        
+        else if lastnumber == 7 {
+            let actionSoundSeven = SKAction.playSoundFileNamed("soundSeven.caf", waitForCompletion: false)
+            runAction(actionSoundSeven)
+        }
+        
+        else if lastnumber == 8 {
+            let actionSoundEight = SKAction.playSoundFileNamed("soundEight.caf", waitForCompletion: false)
+            runAction(actionSoundEight)
+        }
+        
+        else if lastnumber == 9 {
+            let actionSoundNine = SKAction.playSoundFileNamed("soundNine.caf", waitForCompletion: false)
+            runAction(actionSoundNine)
+        }
+        
+        else if lastnumber == 0 {
+            let actionSoundTen = SKAction.playSoundFileNamed("soundTen.caf", waitForCompletion: false)
+            runAction(actionSoundTen)
+        }
+    }
+    
     
     func transitionToGameOver() {
         /* Transitions into GameOver if fail state happens */
