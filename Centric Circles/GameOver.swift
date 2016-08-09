@@ -13,6 +13,8 @@ import SpriteKit
 
 class GameOver: SKScene {
     
+    let gameManager = GameManager.sharedInstance
+    
     var mainMenuButton : MSButtonNode!
     var replayButton : MSButtonNode!
     var endHighscore : SKLabelNode!
@@ -29,38 +31,10 @@ class GameOver: SKScene {
         highscoreName = childNodeWithName("highscoreName") as! SKLabelNode
         finalscoreLabel = childNodeWithName("finalscoreLabel") as! SKLabelNode
         
-        /* Replay Button to restart the game */
-        replayButton.selectedHandler = {
-            
-            /* Reset the score to zero */
-            highscore = 0
+        /* Has the functions of the GameOver Buttons and resets the score */
+        buttonFunctions()
 
-            let gameSceneTemp = GameScene(fileNamed: "GameScene")
-            
-            gameSceneTemp!.scaleMode = .AspectFill
-            
-            
-            self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(0.5))
-            
-
-        }
-
-        
-        mainMenuButton.selectedHandler = {
-            /* Reset the score to zero */
-            highscore = 0
-
-            
-            let gameSceneTemp = StartScene(fileNamed: "StartScene")
-            
-            gameSceneTemp!.scaleMode = .AspectFill
-            
-            self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(0.5))
-            
-
-        }
-        
-        
+    
         
     }
     
@@ -75,15 +49,56 @@ class GameOver: SKScene {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
-        if (highscore > newscore){
-            newscore = highscore
+        scoreRuling()
+        
+    }
+    
+    
+    func scoreRuling() {
+        if (gameManager.highScore < gameManager.newscore){
+            gameManager.highScore = gameManager.newscore
         }
         
         /* Game Score Label */
         
-        highscoreName.text = String(newscore)
+        highscoreName.text = String(gameManager.newscore)
         
-        finalscoreLabel.text = String(highscore)
+        finalscoreLabel.text = String(gameManager.highScore)
+        
+        
+        }
     
+    func buttonFunctions() {
+    
+        /* Replay Button to restart the game */
+        replayButton.selectedHandler = {
+            
+            /* Reset the score to zero */
+            self.gameManager.newscore = 0
+            
+            let gameSceneTemp = GameScene(fileNamed: "GameScene")
+            
+            gameSceneTemp!.scaleMode = .AspectFill
+            
+            
+            self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(0.5))
+            
+        }
+        
+        mainMenuButton.selectedHandler = {
+            /* Reset the score to zero */
+            self.gameManager.newscore = 0
+            
+            
+            let gameSceneTemp = StartScene(fileNamed: "StartScene")
+            
+            gameSceneTemp!.scaleMode = .AspectFill
+            
+            self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(0.5))
+            
+            
+        }
     }
+    
+    
 }

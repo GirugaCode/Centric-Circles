@@ -8,11 +8,13 @@
 
 import UIKit
 import SpriteKit
+import AudioToolbox
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         if let scene = StartScene(fileNamed:"StartScene") {
             // Configure the view.
@@ -28,6 +30,7 @@ class GameViewController: UIViewController {
             
             skView.presentScene(scene)
         }
+        
     }
 
     override func shouldAutorotate() -> Bool {

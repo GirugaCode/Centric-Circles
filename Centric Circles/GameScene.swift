@@ -7,10 +7,9 @@
 //
 
 import SpriteKit
+import UIKit
+import AudioToolbox
 
-/* Universal Variable */
-var highscore = 0
-var newscore = 0
 /* Game States */
 enum GameState{
     case Title, Ready, Playing, Pause, GameOver
@@ -22,6 +21,8 @@ var state: GameState = .Title
 
 
 class GameScene: SKScene {
+    
+    let gameManager = GameManager.sharedInstance
     
     var gameBackground : SKSpriteNode!
     var innerCircle : SKSpriteNode!
@@ -38,9 +39,9 @@ class GameScene: SKScene {
     var randomnum = CGFloat.random() % 0.423 + 0.2
     
     /* Variable for the score system in GameScene */
-    var score: Int = highscore {
+    var score: Int = 0 {
         didSet {
-            scoreLabel.text = String(highscore)
+            scoreLabel.text = String(gameManager.newscore)
         }
     }
     
@@ -55,7 +56,7 @@ class GameScene: SKScene {
         scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
         
         /* Connects to my highscore string (make sure it was after the scoreLabel code connection) */
-        scoreLabel.text = String(highscore)
+        scoreLabel.text = String(gameManager.newscore)
         
         
         
@@ -107,6 +108,10 @@ class GameScene: SKScene {
         else {
             if isTouching == false {
                 print("Lose")
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                /* Change background color Red */
+                /* remove all action */
+                /*Delay this code*/
                 transitionToGameOver()
             }
         }
@@ -125,7 +130,7 @@ class GameScene: SKScene {
     
     func reverseScale() {
         /* Retracts the circle if it hits a certain scale of the screen */
-        let reverseScale = SKAction.scaleTo(0.057, duration: 2)
+        let reverseScale = SKAction.scaleTo(0.057, duration: 1.5)
         
         if innerCircle.xScale >= 0.75 {
             innerCircle.runAction(reverseScale)
@@ -135,9 +140,9 @@ class GameScene: SKScene {
     
     func resetNodes() {
         /* Game Score Label */
-        highscore += 1
+        gameManager.newscore += 1
         hasRandomizedColor = false
-        scoreLabel.text = String(highscore)
+        scoreLabel.text = String(gameManager.newscore)
         
         innerCircle.removeFromParent()
         outerCircle.removeFromParent()
@@ -177,13 +182,14 @@ class GameScene: SKScene {
     
     
     func colorRuling() {
-        if (highscore%10 == 0 && highscore != 1) && !hasRandomizedColor {
+        if (gameManager.newscore%10 == 0 && gameManager.newscore != 1) && !hasRandomizedColor {
             innerCircleColor = randomColor()
             outerCircleColor = randomColor()
             gameBackground.color = randomColor()
             hasRandomizedColor = true
             innerCircle.color = innerCircleColor
             outerCircle.color = outerCircleColor
+            
         }
     }
 
@@ -193,7 +199,7 @@ class GameScene: SKScene {
     func soundRuling() {
         
         
-        let arrayCounter = String(highscore).characters.map {Int(String($0))!}
+        let arrayCounter = String(gameManager.newscore).characters.map {Int(String($0))!}
 
         let lastnumber = arrayCounter.last
         
@@ -245,6 +251,10 @@ class GameScene: SKScene {
         else if lastnumber == 0 {
             let actionSoundTen = SKAction.playSoundFileNamed("soundTen.caf", waitForCompletion: false)
             runAction(actionSoundTen)
+            
+            let particles = SKEmitterNode(fileNamed:"scoreParticle.sks")
+            
+            outerCircle.addChild(particles!)
         }
     }
     
