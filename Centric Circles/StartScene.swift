@@ -15,16 +15,23 @@ class StartScene: SKScene {
     
     var startPlay : SKSpriteNode!
     var startBackground : SKSpriteNode!
+    var taptoplayLabel : SKLabelNode!
+
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         scene?.scaleMode = .AspectFill
         
-        startPlay = childNodeWithName("startPlay") as! SKSpriteNode
+        //startPlay = childNodeWithName("startPlay") as! SKSpriteNode
         startBackground = childNodeWithName("startBackground") as! SKSpriteNode
+        taptoplayLabel = childNodeWithName("taptoplayLabel") as! SKLabelNode
+        
         
         startBackgroundGradient()
         
+        let animateList = SKAction.sequence([SKAction.fadeInWithDuration(0.5), SKAction.waitForDuration(0.2), SKAction.fadeOutWithDuration(0.5)])
+        taptoplayLabel.runAction(SKAction.repeatActionForever(animateList))
 
         
     }
@@ -49,7 +56,7 @@ class StartScene: SKScene {
     
     func startBackgroundGradient() {
         /* Background radient */
-        let gradient = SKTexture(size: size, color1: CIColor(red: 14/255.0, green: 48/255.0, blue: 94/255.0), color2: CIColor(red: 44/255.0, green: 130/255.0, blue: 189/255.0), direction: .up)
+        let gradient = SKTexture(size: size, color1: CIColor(red: 233/255.0, green: 78/255.0, blue: 119/255.0), color2: CIColor(red: 198/255.0, green: 164/255.0, blue: 154/255.0), direction: .up)
         startBackground.runAction(SKAction.setTexture(gradient))
     
     }

@@ -10,6 +10,7 @@ import SpriteKit
 import UIKit
 import AudioToolbox
 
+
 /* Game States */
 enum GameState{
     case Title, Ready, Playing, Pause, GameOver
@@ -27,9 +28,11 @@ class GameScene: SKScene {
     var gameBackground : SKSpriteNode!
     var innerCircle : SKSpriteNode!
     var outerCircle : SKSpriteNode!
+    var invisibleCircle : SKSpriteNode!
     var scoreLabel: SKLabelNode!
     var isTouching = true
     var hasRandomizedColor = false
+    var gameOverRunned = false
     var innerCircleColor = UIColor.grayColor()
     var outerCircleColor = UIColor.whiteColor()
     
@@ -45,9 +48,11 @@ class GameScene: SKScene {
         }
     }
     
+    
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        
+        state = .Playing
         setupCircles()
         
         gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
@@ -64,12 +69,13 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
-        state = .Playing
-        
-        isTouching = true
-        
-        scaleOut()
-
+        if state != .GameOver {
+            state = .Playing
+            
+            isTouching = true
+            
+            scaleOut()
+        }
         
     }
     
@@ -106,16 +112,12 @@ class GameScene: SKScene {
         }
         
         else {
-            if isTouching == false {
+            if isTouching == false && gameOverRunned == false {
                 print("Lose")
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                /* Change background color Red */
-                /* remove all action */
-                /*Delay this code*/
-                transitionToGameOver()
+                gameOverSequence()
+                gameOverRunned = true
             }
         }
-        
     }
     
     func scaleOut() {
@@ -159,6 +161,7 @@ class GameScene: SKScene {
         innerCircle.color = innerCircleColor
         innerCircle.colorBlendFactor = 1
         addChild(innerCircle)
+        
         
         outerCircle = SKSpriteNode(imageNamed: "outsideCircle")
         outerCircle.zPosition = 1
@@ -206,51 +209,73 @@ class GameScene: SKScene {
         if lastnumber == 1 {
             let actionSoundOne = SKAction.playSoundFileNamed("soundOne.caf", waitForCompletion: false)
                 runAction(actionSoundOne)
+            
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
+//            let stopParticles = SKAction.removeFromParent()
+//            particles?.runAction(stopParticles)
         }
         
         else if lastnumber == 2 {
             let actionSoundTwo = SKAction.playSoundFileNamed("soundTwo.caf", waitForCompletion: false)
                 runAction(actionSoundTwo)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 3 {
             let actionSoundThree = SKAction.playSoundFileNamed("soundThree.caf", waitForCompletion: false)
             runAction(actionSoundThree)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 4 {
             let actionSoundFour = SKAction.playSoundFileNamed("soundFour.caf", waitForCompletion: false)
             runAction(actionSoundFour)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 5 {
             let actionSoundFive = SKAction.playSoundFileNamed("soundFive.caf", waitForCompletion: false)
             runAction(actionSoundFive)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 6 {
             let actionSoundSix = SKAction.playSoundFileNamed("soundSix.caf", waitForCompletion: false)
             runAction(actionSoundSix)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 7 {
             let actionSoundSeven = SKAction.playSoundFileNamed("soundSeven.caf", waitForCompletion: false)
             runAction(actionSoundSeven)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 8 {
             let actionSoundEight = SKAction.playSoundFileNamed("soundEight.caf", waitForCompletion: false)
             runAction(actionSoundEight)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 9 {
             let actionSoundNine = SKAction.playSoundFileNamed("soundNine.caf", waitForCompletion: false)
             runAction(actionSoundNine)
+            let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
+            innerCircle.addChild(particles!)
         }
         
         else if lastnumber == 0 {
             let actionSoundTen = SKAction.playSoundFileNamed("soundTen.caf", waitForCompletion: false)
             runAction(actionSoundTen)
+            
             
             let particles = SKEmitterNode(fileNamed:"scoreParticle.sks")
             
@@ -258,13 +283,33 @@ class GameScene: SKScene {
         }
     }
     
+    func gameOverSequence() {
+        /* remove all action */
+        state = .GameOver
+        
+        /* Change background color Red */
+        gameBackground.color = .redColor()
+        
+        /* Losing sound */
+        let losingSound = SKAction.playSoundFileNamed("overSound.mp3", waitForCompletion: true)
+        /* Vibrate */
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
+        /*Delay this code*/
+        let blockCode = SKAction.runBlock({
+            self.transitionToGameOver()
+        })
+        let sequence = SKAction.sequence([losingSound,blockCode])
+        self.runAction(sequence)
+    
+    }
     
     func transitionToGameOver() {
         /* Transitions into GameOver if fail state happens */
         
         let gameSceneTemp = GameOver(fileNamed: "GameOver")
         gameSceneTemp!.scaleMode = .AspectFill
-        self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1))
+        self.view!.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1))
     
     }
     
