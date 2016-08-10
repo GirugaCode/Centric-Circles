@@ -17,7 +17,7 @@ class GameOver: SKScene {
     
     var mainMenuButton : MSButtonNode!
     var replayButton : MSButtonNode!
-    var endHighscore : SKLabelNode!
+    var endHighscore : SKSpriteNode!
     var highscoreName : SKLabelNode!
     var finalscoreLabel : SKLabelNode!
     var gameBackground : SKSpriteNode!
@@ -28,7 +28,7 @@ class GameOver: SKScene {
     
         mainMenuButton = childNodeWithName("mainMenuButton") as! MSButtonNode
         replayButton = childNodeWithName("replayButton") as! MSButtonNode
-        endHighscore = childNodeWithName("endHighscore") as! SKLabelNode
+        endHighscore = childNodeWithName("endHighscore") as! SKSpriteNode
         highscoreName = childNodeWithName("highscoreName") as! SKLabelNode
         finalscoreLabel = childNodeWithName("finalscoreLabel") as! SKLabelNode
         gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
@@ -40,8 +40,7 @@ class GameOver: SKScene {
         /* Has the functions of the GameOver Buttons and resets the score */
         buttonFunctions()
         
-        /* Gardient Background */
-        startBackgroundGradient()
+
 
     
         

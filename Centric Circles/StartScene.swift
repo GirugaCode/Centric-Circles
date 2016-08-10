@@ -15,7 +15,8 @@ class StartScene: SKScene {
     
     var startPlay : SKSpriteNode!
     var startBackground : SKSpriteNode!
-    var taptoplayLabel : SKLabelNode!
+    var playIcon : SKSpriteNode!
+    var startDesign : SKSpriteNode!
 
     
     
@@ -25,13 +26,12 @@ class StartScene: SKScene {
         
         //startPlay = childNodeWithName("startPlay") as! SKSpriteNode
         startBackground = childNodeWithName("startBackground") as! SKSpriteNode
-        taptoplayLabel = childNodeWithName("taptoplayLabel") as! SKLabelNode
+        playIcon = childNodeWithName("playIcon") as! SKSpriteNode
+        startDesign = childNodeWithName("startDesign") as! SKSpriteNode
         
-        
-        startBackgroundGradient()
         
         let animateList = SKAction.sequence([SKAction.fadeInWithDuration(0.5), SKAction.waitForDuration(0.2), SKAction.fadeOutWithDuration(0.5)])
-        taptoplayLabel.runAction(SKAction.repeatActionForever(animateList))
+        startDesign.runAction(SKAction.repeatActionForever(animateList))
         
     
 
