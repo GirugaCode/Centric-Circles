@@ -32,6 +32,8 @@ class StartScene: SKScene {
         
         let animateList = SKAction.sequence([SKAction.fadeInWithDuration(0.5), SKAction.waitForDuration(0.2), SKAction.fadeOutWithDuration(0.5)])
         taptoplayLabel.runAction(SKAction.repeatActionForever(animateList))
+        
+    
 
         
     }

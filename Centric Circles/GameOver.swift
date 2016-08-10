@@ -34,6 +34,9 @@ class GameOver: SKScene {
         gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
         
         
+        /* Advertisment */
+        Chartboost.showInterstitial(CBLocationHomeScreen)
+        
         /* Has the functions of the GameOver Buttons and resets the score */
         buttonFunctions()
         

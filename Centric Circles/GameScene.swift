@@ -284,6 +284,9 @@ class GameScene: SKScene {
     }
     
     func gameOverSequence() {
+        
+
+        
         /* remove all action */
         state = .GameOver
         
@@ -306,7 +309,6 @@ class GameScene: SKScene {
     
     func transitionToGameOver() {
         /* Transitions into GameOver if fail state happens */
-        
         let gameSceneTemp = GameOver(fileNamed: "GameOver")
         gameSceneTemp!.scaleMode = .AspectFill
         self.view!.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1))

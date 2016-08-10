@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21388495FE5B11FC2AE88E17 /* Pods_Centric_Circles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033669EFEFE4EB7E52A5D031 /* Pods_Centric_Circles.framework */; };
+		22A0B6EC552DEE7998553919 /* Pods_Centric_CirclesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FA71A73B5AEFC70491DA7F /* Pods_Centric_CirclesTests.framework */; };
 		280868A81D3506330068B702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868A71D3506330068B702 /* AppDelegate.swift */; };
 		280868AE1D3506330068B702 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868AD1D3506330068B702 /* GameViewController.swift */; };
 		280868B11D3506330068B702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280868AF1D3506330068B702 /* Main.storyboard */; };
@@ -20,6 +22,11 @@
 		281E8A3C1D594E2500231011 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281E8A3B1D594E2500231011 /* GameManager.swift */; };
 		281E8A3E1D5974E700231011 /* pointParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 281E8A3D1D5974E700231011 /* pointParticle.sks */; };
 		283038A61D5A738300BDB676 /* overSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 283038A51D5A738300BDB676 /* overSound.mp3 */; };
+		283039041D5A981600BDB676 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283039031D5A981600BDB676 /* StoreKit.framework */; };
+		283039061D5A985E00BDB676 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283039051D5A985E00BDB676 /* Foundation.framework */; };
+		283039081D5A986600BDB676 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283039071D5A986600BDB676 /* CoreGraphics.framework */; };
+		2830390A1D5A987000BDB676 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283039091D5A987000BDB676 /* UIKit.framework */; };
+		283279E71D5AAB5100CC7314 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283279E61D5AAB5100CC7314 /* Chartboost.framework */; };
 		284C596B1D47E41B009DBCE0 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C596A1D47E41B009DBCE0 /* StartScene.swift */; };
 		284C596D1D47E421009DBCE0 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 284C596C1D47E421009DBCE0 /* StartScene.sks */; };
 		284C596F1D47E425009DBCE0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C596E1D47E425009DBCE0 /* GameScene.swift */; };
@@ -51,6 +58,7 @@
 		28DE38A61D36BD0A00D1BED4 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE389A1D36BD0A00D1BED4 /* SKTEffects.swift */; };
 		28DE38A71D36BD0A00D1BED4 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE389B1D36BD0A00D1BED4 /* SKTTimingFunctions.swift */; };
 		28DE38A81D36BD0A00D1BED4 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE389C1D36BD0A00D1BED4 /* Vector3.swift */; };
+		F4174D05044EBEA17DDC8BCB /* Pods_Centric_CirclesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D4916FFB901002E9C8A78B /* Pods_Centric_CirclesUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +76,68 @@
 			remoteGlobalIDString = 280868A31D3506330068B702;
 			remoteInfo = "Centric Circles";
 		};
+		28A283681D5ABFB400814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283611D5ABFB400814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE332933FC3D85773CDAAFED9C2BE1FF;
+			remoteInfo = Mixpanel;
+		};
+		28A2836A1D5ABFB400814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283611D5ABFB400814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A5DF1CAF79E0F05BA05E14E9C37B5C6;
+			remoteInfo = "Pods-Centric Circles";
+		};
+		28A2836C1D5ABFB400814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283611D5ABFB400814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE34AE31D7551DA8D87BB48F0E092961;
+			remoteInfo = "Pods-Centric CirclesTests";
+		};
+		28A2836E1D5ABFB400814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283611D5ABFB400814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0BB02F4C9BD755692138ED98090C5D25;
+			remoteInfo = "Pods-Centric CirclesUITests";
+		};
+		28A283771D5ABFB900814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283701D5ABFB900814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE332933FC3D85773CDAAFED9C2BE1FF;
+			remoteInfo = Mixpanel;
+		};
+		28A283791D5ABFB900814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283701D5ABFB900814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A5DF1CAF79E0F05BA05E14E9C37B5C6;
+			remoteInfo = "Pods-Centric Circles";
+		};
+		28A2837B1D5ABFB900814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283701D5ABFB900814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE34AE31D7551DA8D87BB48F0E092961;
+			remoteInfo = "Pods-Centric CirclesTests";
+		};
+		28A2837D1D5ABFB900814932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28A283701D5ABFB900814932 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0BB02F4C9BD755692138ED98090C5D25;
+			remoteInfo = "Pods-Centric CirclesUITests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033669EFEFE4EB7E52A5D031 /* Pods_Centric_Circles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Centric_Circles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FA71A73B5AEFC70491DA7F /* Pods_Centric_CirclesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Centric_CirclesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E37F166F878FA3D12455E51 /* Pods-Centric CirclesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric CirclesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Centric CirclesUITests/Pods-Centric CirclesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		280868A41D3506330068B702 /* Centric Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Centric Circles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		280868A71D3506330068B702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		280868AD1D3506330068B702 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -91,12 +158,20 @@
 		281E8A3B1D594E2500231011 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		281E8A3D1D5974E700231011 /* pointParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = pointParticle.sks; sourceTree = "<group>"; };
 		283038A51D5A738300BDB676 /* overSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = overSound.mp3; sourceTree = "<group>"; };
+		283039031D5A981600BDB676 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		283039051D5A985E00BDB676 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		283039071D5A986600BDB676 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		283039091D5A987000BDB676 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2830390B1D5A98EB00BDB676 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		283279E61D5AAB5100CC7314 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		284C596A1D47E41B009DBCE0 /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		284C596C1D47E421009DBCE0 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
 		284C596E1D47E425009DBCE0 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		284C59701D47E42A009DBCE0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		284C59721D47E42E009DBCE0 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		284C59741D47E434009DBCE0 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		28A283611D5ABFB400814932 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		28A283701D5ABFB900814932 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		28A43B4F1D58F1B4001D20B9 /* soundEight.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundEight.caf; sourceTree = "<group>"; };
 		28A43B501D58F1B4001D20B9 /* soundFive.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundFive.caf; sourceTree = "<group>"; };
 		28A43B511D58F1B4001D20B9 /* soundFour.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundFour.caf; sourceTree = "<group>"; };
@@ -122,6 +197,12 @@
 		28DE389A1D36BD0A00D1BED4 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		28DE389B1D36BD0A00D1BED4 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		28DE389C1D36BD0A00D1BED4 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		42777DDDE692DCD0D56E4AAA /* Pods-Centric CirclesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric CirclesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Centric CirclesTests/Pods-Centric CirclesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E9E6D36B7B49CAB153974BE /* Pods-Centric CirclesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric CirclesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Centric CirclesUITests/Pods-Centric CirclesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5813921992CB43963636EBEA /* Pods-Centric Circles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric Circles.release.xcconfig"; path = "Pods/Target Support Files/Pods-Centric Circles/Pods-Centric Circles.release.xcconfig"; sourceTree = "<group>"; };
+		B1D4916FFB901002E9C8A78B /* Pods_Centric_CirclesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Centric_CirclesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB810744D25E2A816E5AAB77 /* Pods-Centric Circles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric Circles.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Centric Circles/Pods-Centric Circles.debug.xcconfig"; sourceTree = "<group>"; };
+		F90EFE3DA8BC1C4E81EC211D /* Pods-Centric CirclesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric CirclesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Centric CirclesTests/Pods-Centric CirclesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +210,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283279E71D5AAB5100CC7314 /* Chartboost.framework in Frameworks */,
+				2830390A1D5A987000BDB676 /* UIKit.framework in Frameworks */,
+				283039081D5A986600BDB676 /* CoreGraphics.framework in Frameworks */,
+				283039061D5A985E00BDB676 /* Foundation.framework in Frameworks */,
+				283039041D5A981600BDB676 /* StoreKit.framework in Frameworks */,
+				21388495FE5B11FC2AE88E17 /* Pods_Centric_Circles.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A0B6EC552DEE7998553919 /* Pods_Centric_CirclesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4174D05044EBEA17DDC8BCB /* Pods_Centric_CirclesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,10 +241,19 @@
 		2808689B1D3506330068B702 = {
 			isa = PBXGroup;
 			children = (
+				28A283701D5ABFB900814932 /* Pods.xcodeproj */,
+				28A283611D5ABFB400814932 /* Pods.xcodeproj */,
+				283279E61D5AAB5100CC7314 /* Chartboost.framework */,
+				283039091D5A987000BDB676 /* UIKit.framework */,
+				283039071D5A986600BDB676 /* CoreGraphics.framework */,
+				283039051D5A985E00BDB676 /* Foundation.framework */,
+				283039031D5A981600BDB676 /* StoreKit.framework */,
 				280868A61D3506330068B702 /* Centric Circles */,
 				280868BF1D3506330068B702 /* Centric CirclesTests */,
 				280868CA1D3506330068B702 /* Centric CirclesUITests */,
 				280868A51D3506330068B702 /* Products */,
+				549E8E110C5235B1C645554B /* Pods */,
+				4DED591C5D8A964EBBCD74A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +292,7 @@
 				281E8A3A1D594D6F00231011 /* DataStorage */,
 				28A43B4E1D58F1B4001D20B9 /* Edited sounds */,
 				28DE38901D36BD0A00D1BED4 /* SKTUtils */,
+				2830390B1D5A98EB00BDB676 /* BridgingHeader.h */,
 			);
 			path = "Centric Circles";
 			sourceTree = "<group>";
@@ -223,6 +322,28 @@
 				281E8A371D594D5800231011 /* SwiftyUserDefaults.h */,
 			);
 			name = DataStorage;
+			sourceTree = "<group>";
+		};
+		28A283621D5ABFB400814932 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28A283691D5ABFB400814932 /* Mixpanel.framework */,
+				28A2836B1D5ABFB400814932 /* Pods_Centric_Circles.framework */,
+				28A2836D1D5ABFB400814932 /* Pods_Centric_CirclesTests.framework */,
+				28A2836F1D5ABFB400814932 /* Pods_Centric_CirclesUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28A283711D5ABFB900814932 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28A283781D5ABFB900814932 /* Mixpanel.framework */,
+				28A2837A1D5ABFB900814932 /* Pods_Centric_Circles.framework */,
+				28A2837C1D5ABFB900814932 /* Pods_Centric_CirclesTests.framework */,
+				28A2837E1D5ABFB900814932 /* Pods_Centric_CirclesUITests.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		28A43B4E1D58F1B4001D20B9 /* Edited sounds */ = {
@@ -262,6 +383,29 @@
 			path = SKTUtils;
 			sourceTree = "<group>";
 		};
+		4DED591C5D8A964EBBCD74A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				033669EFEFE4EB7E52A5D031 /* Pods_Centric_Circles.framework */,
+				15FA71A73B5AEFC70491DA7F /* Pods_Centric_CirclesTests.framework */,
+				B1D4916FFB901002E9C8A78B /* Pods_Centric_CirclesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		549E8E110C5235B1C645554B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB810744D25E2A816E5AAB77 /* Pods-Centric Circles.debug.xcconfig */,
+				5813921992CB43963636EBEA /* Pods-Centric Circles.release.xcconfig */,
+				42777DDDE692DCD0D56E4AAA /* Pods-Centric CirclesTests.debug.xcconfig */,
+				F90EFE3DA8BC1C4E81EC211D /* Pods-Centric CirclesTests.release.xcconfig */,
+				1E37F166F878FA3D12455E51 /* Pods-Centric CirclesUITests.debug.xcconfig */,
+				4E9E6D36B7B49CAB153974BE /* Pods-Centric CirclesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,9 +413,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 280868D01D3506330068B702 /* Build configuration list for PBXNativeTarget "Centric Circles" */;
 			buildPhases = (
+				021C0CE55C25C57D2E087E5B /* [CP] Check Pods Manifest.lock */,
 				280868A01D3506330068B702 /* Sources */,
 				280868A11D3506330068B702 /* Frameworks */,
 				280868A21D3506330068B702 /* Resources */,
+				F0E05E31836A5791EA21C737 /* [CP] Embed Pods Frameworks */,
+				EA38F0212DC4AEF78830FD33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,9 +433,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 280868D31D3506330068B702 /* Build configuration list for PBXNativeTarget "Centric CirclesTests" */;
 			buildPhases = (
+				FAED9BBA03467899AD3021D6 /* [CP] Check Pods Manifest.lock */,
 				280868B81D3506330068B702 /* Sources */,
 				280868B91D3506330068B702 /* Frameworks */,
 				280868BA1D3506330068B702 /* Resources */,
+				9F8B6996CE689246067BB203 /* [CP] Embed Pods Frameworks */,
+				79AC9DD39D86B6C97EAE5D5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,9 +454,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 280868D61D3506330068B702 /* Build configuration list for PBXNativeTarget "Centric CirclesUITests" */;
 			buildPhases = (
+				B6C955806CB38F78986FEA90 /* [CP] Check Pods Manifest.lock */,
 				280868C31D3506330068B702 /* Sources */,
 				280868C41D3506330068B702 /* Frameworks */,
 				280868C51D3506330068B702 /* Resources */,
+				E59C33F43A2FDFF5DC94DDAB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,7 +482,7 @@
 				TargetAttributes = {
 					280868A31D3506330068B702 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = FBPU586293;
+						DevelopmentTeam = F5JXR2F7P3;
 					};
 					280868BB1D3506330068B702 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -353,6 +505,16 @@
 			mainGroup = 2808689B1D3506330068B702;
 			productRefGroup = 280868A51D3506330068B702 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 28A283621D5ABFB400814932 /* Products */;
+					ProjectRef = 28A283611D5ABFB400814932 /* Pods.xcodeproj */;
+				},
+				{
+					ProductGroup = 28A283711D5ABFB900814932 /* Products */;
+					ProjectRef = 28A283701D5ABFB900814932 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				280868A31D3506330068B702 /* Centric Circles */,
@@ -361,6 +523,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		28A283691D5ABFB400814932 /* Mixpanel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Mixpanel.framework;
+			remoteRef = 28A283681D5ABFB400814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28A2836B1D5ABFB400814932 /* Pods_Centric_Circles.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Centric_Circles.framework;
+			remoteRef = 28A2836A1D5ABFB400814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28A2836D1D5ABFB400814932 /* Pods_Centric_CirclesTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Centric_CirclesTests.framework;
+			remoteRef = 28A2836C1D5ABFB400814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28A2836F1D5ABFB400814932 /* Pods_Centric_CirclesUITests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Centric_CirclesUITests.framework;
+			remoteRef = 28A2836E1D5ABFB400814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28A283781D5ABFB900814932 /* Mixpanel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Mixpanel.framework;
+			remoteRef = 28A283771D5ABFB900814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28A2837A1D5ABFB900814932 /* Pods_Centric_Circles.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Centric_Circles.framework;
+			remoteRef = 28A283791D5ABFB900814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28A2837C1D5ABFB900814932 /* Pods_Centric_CirclesTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Centric_CirclesTests.framework;
+			remoteRef = 28A2837B1D5ABFB900814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28A2837E1D5ABFB900814932 /* Pods_Centric_CirclesUITests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Centric_CirclesUITests.framework;
+			remoteRef = 28A2837D1D5ABFB900814932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		280868A21D3506330068B702 /* Resources */ = {
@@ -405,6 +626,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		021C0CE55C25C57D2E087E5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79AC9DD39D86B6C97EAE5D5E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Centric CirclesTests/Pods-Centric CirclesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F8B6996CE689246067BB203 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Centric CirclesTests/Pods-Centric CirclesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6C955806CB38F78986FEA90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E59C33F43A2FDFF5DC94DDAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Centric CirclesUITests/Pods-Centric CirclesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA38F0212DC4AEF78830FD33 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Centric Circles/Pods-Centric Circles-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E05E31836A5791EA21C737 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Centric Circles/Pods-Centric Circles-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAED9BBA03467899AD3021D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		280868A01D3506330068B702 /* Sources */ = {
@@ -574,39 +918,55 @@
 		};
 		280868D11D3506330068B702 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB810744D25E2A816E5AAB77 /* Pods-Centric Circles.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Danh Phu Nguyen (M83YX576QR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Danh Phu Nguyen (M83YX576QR)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Centric",
+					Circles,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Centric Circles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanNguyen.Centric-Circles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RyanNguyen.CentricCircles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2cfa119a-cd93-463f-8657-71c358bdaa14";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Centric Circles/BridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		280868D21D3506330068B702 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5813921992CB43963636EBEA /* Pods-Centric Circles.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Danh Phu Nguyen (M83YX576QR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Danh Phu Nguyen (M83YX576QR)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Centric",
+					Circles,
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Centric Circles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanNguyen.Centric-Circles";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RyanNguyen.CentricCircles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2cfa119a-cd93-463f-8657-71c358bdaa14";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Centric Circles/BridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		280868D41D3506330068B702 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42777DDDE692DCD0D56E4AAA /* Pods-Centric CirclesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "Centric CirclesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanNguyen.Centric-CirclesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Centric Circles.app/Centric Circles";
@@ -615,10 +975,10 @@
 		};
 		280868D51D3506330068B702 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F90EFE3DA8BC1C4E81EC211D /* Pods-Centric CirclesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Centric CirclesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanNguyen.Centric-CirclesTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Centric Circles.app/Centric Circles";
@@ -627,10 +987,10 @@
 		};
 		280868D71D3506330068B702 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E37F166F878FA3D12455E51 /* Pods-Centric CirclesUITests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "Centric CirclesUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanNguyen.Centric-CirclesUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = "Centric Circles";
@@ -639,9 +999,9 @@
 		};
 		280868D81D3506330068B702 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E9E6D36B7B49CAB153974BE /* Pods-Centric CirclesUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Centric CirclesUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanNguyen.Centric-CirclesUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = "Centric Circles";

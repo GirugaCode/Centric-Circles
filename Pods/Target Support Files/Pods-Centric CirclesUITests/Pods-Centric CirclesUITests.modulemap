@@ -1,0 +1,6 @@
+framework module Pods_Centric_CirclesUITests {
+  umbrella header "Pods-Centric CirclesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

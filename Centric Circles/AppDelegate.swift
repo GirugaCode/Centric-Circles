@@ -6,7 +6,10 @@
 //  Copyright © 2016 Ryan Nguyen. All rights reserved.
 //
 
+
 import UIKit
+import Mixpanel
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Mixpanel.sharedInstanceWithToken("bd19ca9a1940dbc85071c2796d9bcd64")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("App launched")
+        
         // Override point for customization after application launch.
         /* Initialize singleton, load data */
         GameManager.sharedInstance
-        
+        // Initialize the Chartboost library
+        Chartboost.startWithAppId("57aa600304b01654919edf60", appSignature: "8d26684abf6afbd4b816db9d7086152571ee9276", delegate: nil)
         return true
     }
 
