@@ -58,6 +58,7 @@
 		28DE38A61D36BD0A00D1BED4 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE389A1D36BD0A00D1BED4 /* SKTEffects.swift */; };
 		28DE38A71D36BD0A00D1BED4 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE389B1D36BD0A00D1BED4 /* SKTTimingFunctions.swift */; };
 		28DE38A81D36BD0A00D1BED4 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE389C1D36BD0A00D1BED4 /* Vector3.swift */; };
+		28EE67011D5D714B00DDFD78 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EE67001D5D714B00DDFD78 /* GameKit.framework */; };
 		F4174D05044EBEA17DDC8BCB /* Pods_Centric_CirclesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D4916FFB901002E9C8A78B /* Pods_Centric_CirclesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +198,7 @@
 		28DE389A1D36BD0A00D1BED4 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		28DE389B1D36BD0A00D1BED4 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		28DE389C1D36BD0A00D1BED4 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		28EE67001D5D714B00DDFD78 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		42777DDDE692DCD0D56E4AAA /* Pods-Centric CirclesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric CirclesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Centric CirclesTests/Pods-Centric CirclesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E9E6D36B7B49CAB153974BE /* Pods-Centric CirclesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric CirclesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Centric CirclesUITests/Pods-Centric CirclesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5813921992CB43963636EBEA /* Pods-Centric Circles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Centric Circles.release.xcconfig"; path = "Pods/Target Support Files/Pods-Centric Circles/Pods-Centric Circles.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			files = (
 				283279E71D5AAB5100CC7314 /* Chartboost.framework in Frameworks */,
 				2830390A1D5A987000BDB676 /* UIKit.framework in Frameworks */,
+				28EE67011D5D714B00DDFD78 /* GameKit.framework in Frameworks */,
 				283039081D5A986600BDB676 /* CoreGraphics.framework in Frameworks */,
 				283039061D5A985E00BDB676 /* Foundation.framework in Frameworks */,
 				283039041D5A981600BDB676 /* StoreKit.framework in Frameworks */,
@@ -386,6 +389,7 @@
 		4DED591C5D8A964EBBCD74A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28EE67001D5D714B00DDFD78 /* GameKit.framework */,
 				033669EFEFE4EB7E52A5D031 /* Pods_Centric_Circles.framework */,
 				15FA71A73B5AEFC70491DA7F /* Pods_Centric_CirclesTests.framework */,
 				B1D4916FFB901002E9C8A78B /* Pods_Centric_CirclesUITests.framework */,
@@ -483,6 +487,11 @@
 					280868A31D3506330068B702 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = F5JXR2F7P3;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					280868BB1D3506330068B702 = {
 						CreatedOnToolsVersion = 7.3.1;

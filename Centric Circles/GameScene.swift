@@ -156,19 +156,22 @@ class GameScene: SKScene {
     func setupCircles() {
         innerCircle = SKSpriteNode(imageNamed: "insideCircle")
         innerCircle.zPosition = 2
-        innerCircle.position = CGPoint(x:161.029,y:283.42)
+        innerCircle.position = CGPoint(x:0,y:-0)
         innerCircle.setScale(0.054)
         innerCircle.color = innerCircleColor
+        innerCircle.anchorPoint = CGPoint((x:CGFloat(0.5), y:CGFloat(0.5)))
         innerCircle.colorBlendFactor = 1
         addChild(innerCircle)
         
         
         outerCircle = SKSpriteNode(imageNamed: "outsideCircle")
         outerCircle.zPosition = 1
-        outerCircle.position = CGPoint(x:161.029,y:283.42)
+        outerCircle.position = CGPoint(x:0,y:-0)
+        
         randomnum = CGFloat.random() % 0.423 + 0.2
         outerCircle.setScale(randomnum)
         outerCircle.color = outerCircleColor
+        outerCircle.anchorPoint = CGPoint((x:CGFloat(0.5), y:CGFloat(0.5)))
         outerCircle.colorBlendFactor = 1
         
         addChild(outerCircle)
@@ -310,7 +313,7 @@ class GameScene: SKScene {
     func transitionToGameOver() {
         /* Transitions into GameOver if fail state happens */
         let gameSceneTemp = GameOver(fileNamed: "GameOver")
-        gameSceneTemp!.scaleMode = .AspectFill
+        gameSceneTemp!.scaleMode = .AspectFit
         self.view!.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1))
     
     }

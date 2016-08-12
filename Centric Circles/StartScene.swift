@@ -22,7 +22,7 @@ class StartScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        scene?.scaleMode = .AspectFill
+        scene?.scaleMode = .AspectFit
         
         //startPlay = childNodeWithName("startPlay") as! SKSpriteNode
         startBackground = childNodeWithName("startBackground") as! SKSpriteNode
@@ -43,7 +43,7 @@ class StartScene: SKScene {
         
         let gameSceneTemp = GameScene(fileNamed: "GameScene")
         
-        gameSceneTemp!.scaleMode = .AspectFill
+        gameSceneTemp!.scaleMode = .AspectFit
         
         
         self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(1))
