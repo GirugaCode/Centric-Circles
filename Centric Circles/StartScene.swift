@@ -45,8 +45,10 @@ class StartScene: SKScene {
         
         gameSceneTemp!.scaleMode = .AspectFit
         
-        
         self.scene?.view?.presentScene(gameSceneTemp!, transition: SKTransition.fadeWithDuration(1))
+        
+        let startSound = SKAction.playSoundFileNamed("startSound.caf", waitForCompletion: false)
+        runAction(startSound)
         
         
     }
@@ -55,11 +57,4 @@ class StartScene: SKScene {
         /* Called before each frame is rendered */
     }
     
-    
-    func startBackgroundGradient() {
-        /* Background radient */
-        let gradient = SKTexture(size: size, color1: CIColor(red: 233/255.0, green: 78/255.0, blue: 119/255.0), color2: CIColor(red: 198/255.0, green: 164/255.0, blue: 154/255.0), direction: .up)
-        startBackground.runAction(SKAction.setTexture(gradient))
-    
-    }
 }

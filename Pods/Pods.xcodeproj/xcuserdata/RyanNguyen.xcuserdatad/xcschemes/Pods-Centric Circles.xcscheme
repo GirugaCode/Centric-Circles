@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1899A1DFB92926125CF6AC3B6CF6EFA"
+               BlueprintIdentifier = "E9EA972A2C009CA21C39DB9A40A89C72"
                BuildableName = "Pods_Centric_Circles.framework"
                BlueprintName = "Pods-Centric Circles"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E1899A1DFB92926125CF6AC3B6CF6EFA"
+            BlueprintIdentifier = "E9EA972A2C009CA21C39DB9A40A89C72"
             BuildableName = "Pods_Centric_Circles.framework"
             BlueprintName = "Pods-Centric Circles"
             ReferencedContainer = "container:Pods.xcodeproj">

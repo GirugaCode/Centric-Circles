@@ -9,7 +9,7 @@
 import SpriteKit
 import UIKit
 import AudioToolbox
-
+import ChameleonFramework
 
 /* Game States */
 enum GameState{
@@ -28,7 +28,7 @@ class GameScene: SKScene {
     var gameBackground : SKSpriteNode!
     var innerCircle : SKSpriteNode!
     var outerCircle : SKSpriteNode!
-    var invisibleCircle : SKSpriteNode!
+    var instructions: SKSpriteNode!
     var scoreLabel: SKLabelNode!
     var isTouching = true
     var hasRandomizedColor = false
@@ -53,9 +53,14 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         state = .Playing
-        setupCircles()
         
+        /* Spawns the two circles */
+        setupCircles()
+    
+        /* Code connects the background */
         gameBackground = childNodeWithName("gameBackground") as! SKSpriteNode
+        
+        instructions = childNodeWithName("instructions") as! SKSpriteNode
         
         /* Code connection for the score label in GameScene */
         scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
@@ -63,6 +68,9 @@ class GameScene: SKScene {
         /* Connects to my highscore string (make sure it was after the scoreLabel code connection) */
         scoreLabel.text = String(gameManager.newscore)
         
+        /* Instruction animation */
+        animations()
+
         
         
     }
@@ -98,6 +106,9 @@ class GameScene: SKScene {
         
         /* Condidtion of the color relating to score */
         colorRuling()
+        
+        /* The instructions of the game "Hold and Release" */
+        instructionsOfGame()
         
         /* If Statement if the inner circle hits the outer circle in any of it random position */
         if innerCircle.xScale > randomnum - 0.05 && innerCircle.xScale < randomnum + 0.05 {
@@ -143,6 +154,7 @@ class GameScene: SKScene {
     func resetNodes() {
         /* Game Score Label */
         gameManager.newscore += 1
+        
         hasRandomizedColor = false
         scoreLabel.text = String(gameManager.newscore)
         
@@ -150,6 +162,8 @@ class GameScene: SKScene {
         outerCircle.removeFromParent()
         
         setupCircles()
+        
+
     
     }
     
@@ -167,34 +181,40 @@ class GameScene: SKScene {
         outerCircle = SKSpriteNode(imageNamed: "outsideCircle")
         outerCircle.zPosition = 1
         outerCircle.position = CGPoint(x:0,y:-0)
-        
         randomnum = CGFloat.random() % 0.423 + 0.2
         outerCircle.setScale(randomnum)
         outerCircle.color = outerCircleColor
         outerCircle.anchorPoint = CGPoint((x:CGFloat(0.5), y:CGFloat(0.5)))
         outerCircle.colorBlendFactor = 1
-        
         addChild(outerCircle)
         
     }
     
-    func randomColor() -> UIColor {
-    
-        return UIColor (red:   .random(),
-                        green: .random(),
-                        blue:  .random(),
-                        alpha: 1.0)
-        }
     
     
     func colorRuling() {
         if (gameManager.newscore%10 == 0 && gameManager.newscore != 1) && !hasRandomizedColor {
-            innerCircleColor = randomColor()
-            outerCircleColor = randomColor()
-            gameBackground.color = randomColor()
+            
+            /* Random flat color generator */
+            
+            gameBackground.color = RandomFlatColorWithShade(.Dark)
+            
+            
+            outerCircleColor = RandomFlatColorWithShade(.Light)
+            
+            
+            innerCircleColor = ComplementaryFlatColorOf(outerCircleColor)
+            
+         
+    
+            
+            /* Checking if colors have changed */
             hasRandomizedColor = true
+            
+            /* Making inner circle and outer circle into .color properties */
             innerCircle.color = innerCircleColor
             outerCircle.color = outerCircleColor
+            
             
         }
     }
@@ -215,8 +235,7 @@ class GameScene: SKScene {
             
             let particles = SKEmitterNode(fileNamed:"pointParticle.sks")
             innerCircle.addChild(particles!)
-//            let stopParticles = SKAction.removeFromParent()
-//            particles?.runAction(stopParticles)
+
         }
         
         else if lastnumber == 2 {
@@ -283,6 +302,9 @@ class GameScene: SKScene {
             let particles = SKEmitterNode(fileNamed:"scoreParticle.sks")
             
             outerCircle.addChild(particles!)
+            
+
+            
         }
     }
     
@@ -294,7 +316,9 @@ class GameScene: SKScene {
         state = .GameOver
         
         /* Change background color Red */
-        gameBackground.color = .redColor()
+        gameBackground.color = UIColor.redColor()
+            
+        //UIColor(red:204/255, green: 65/255, blue: 101/255, alpha: 1.0)
         
         /* Losing sound */
         let losingSound = SKAction.playSoundFileNamed("overSound.mp3", waitForCompletion: true)
@@ -314,7 +338,26 @@ class GameScene: SKScene {
         /* Transitions into GameOver if fail state happens */
         let gameSceneTemp = GameOver(fileNamed: "GameOver")
         gameSceneTemp!.scaleMode = .AspectFit
-        self.view!.presentScene(gameSceneTemp!, transition: SKTransition.crossFadeWithDuration(1))
+        self.view!.presentScene(gameSceneTemp!, transition: SKTransition.revealWithDirection(SKTransitionDirection.Left, duration: 0.4))
+    
+    }
+    
+    func instructionsOfGame () {
+        
+        if gameManager.newscore <= 0 {
+            instructions.zPosition = 3
+        }
+        else {
+            instructions.zPosition = -2
+        }
+    }
+    
+    func animations () {
+        
+        /* Animations for the instructions at the beginning of the game */
+        let animateList = SKAction.sequence([SKAction.fadeInWithDuration(0.5), SKAction.waitForDuration(0.2), SKAction.fadeOutWithDuration(0.5)])
+        instructions.runAction(SKAction.repeatActionForever(animateList))
+        
     
     }
     

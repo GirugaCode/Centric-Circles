@@ -42,9 +42,7 @@ class GameOver: SKScene, GKGameCenterControllerDelegate {
         
         /* Has the functions of the GameOver Buttons and resets the score */
         buttonFunctions()
-        
-
-
+    
     
         
     }
@@ -114,13 +112,7 @@ class GameOver: SKScene, GKGameCenterControllerDelegate {
             self.showLeaderBoard()
         }
     }
-    
-    func startBackgroundGradient() {
-        /* Background radient */
-        let gradient = SKTexture(size: size, color1: CIColor(red: 14/255.0, green: 48/255.0, blue: 94/255.0), color2: CIColor(red: 44/255.0, green: 130/255.0, blue: 189/255.0), direction: .up)
-        gameBackground.runAction(SKAction.setTexture(gradient))
-        
-    }
+
     
     func saveHighscore (number : Int) {
         if GKLocalPlayer.localPlayer().authenticated{

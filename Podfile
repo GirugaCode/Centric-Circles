@@ -5,10 +5,10 @@ target 'Centric Circles' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for ProjectName
+  # Pods for Centric Circles
   pod 'Mixpanel'
 
-  # Pods for Centric Circles
+  pod 'ChameleonFramework/Swift'
 
   target 'Centric CirclesTests' do
     inherit! :search_paths
