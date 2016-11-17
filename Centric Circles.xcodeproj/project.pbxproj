@@ -12,7 +12,6 @@
 		280868A81D3506330068B702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868A71D3506330068B702 /* AppDelegate.swift */; };
 		280868AE1D3506330068B702 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868AD1D3506330068B702 /* GameViewController.swift */; };
 		280868B11D3506330068B702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280868AF1D3506330068B702 /* Main.storyboard */; };
-		280868B31D3506330068B702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280868B21D3506330068B702 /* Assets.xcassets */; };
 		280868B61D3506330068B702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280868B41D3506330068B702 /* LaunchScreen.storyboard */; };
 		280868C11D3506330068B702 /* Centric_CirclesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868C01D3506330068B702 /* Centric_CirclesTests.swift */; };
 		280868CC1D3506330068B702 /* Centric_CirclesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280868CB1D3506330068B702 /* Centric_CirclesUITests.swift */; };
@@ -43,6 +42,7 @@
 		284C59711D47E42A009DBCE0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 284C59701D47E42A009DBCE0 /* GameScene.sks */; };
 		284C59731D47E42E009DBCE0 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C59721D47E42E009DBCE0 /* GameOver.swift */; };
 		284C59751D47E434009DBCE0 /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 284C59741D47E434009DBCE0 /* GameOver.sks */; };
+		286301501DC9C0CD007A1573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2863014F1DC9C0CD007A1573 /* Assets.xcassets */; };
 		28A43B651D5906C1001D20B9 /* scoreParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 28A43B631D5906C1001D20B9 /* scoreParticle.sks */; };
 		28A43B661D5906C1001D20B9 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A43B641D5906C1001D20B9 /* bokeh.png */; };
 		28A43B681D591B2F001D20B9 /* CAGradientLayer+Convienence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A43B671D591B2F001D20B9 /* CAGradientLayer+Convienence.swift */; };
@@ -158,7 +158,6 @@
 		280868A71D3506330068B702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		280868AD1D3506330068B702 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		280868B01D3506330068B702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		280868B21D3506330068B702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280868B51D3506330068B702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280868B71D3506330068B702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280868BC1D3506330068B702 /* Centric CirclesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Centric CirclesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +195,7 @@
 		284C59701D47E42A009DBCE0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		284C59721D47E42E009DBCE0 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		284C59741D47E434009DBCE0 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		2863014F1DC9C0CD007A1573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28A283611D5ABFB400814932 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		28A283701D5ABFB900814932 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		28A43B631D5906C1001D20B9 /* scoreParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = scoreParticle.sks; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 				284C59741D47E434009DBCE0 /* GameOver.sks */,
 				280868AD1D3506330068B702 /* GameViewController.swift */,
 				280868AF1D3506330068B702 /* Main.storyboard */,
-				280868B21D3506330068B702 /* Assets.xcassets */,
+				2863014F1DC9C0CD007A1573 /* Assets.xcassets */,
 				281E8A3D1D5974E700231011 /* pointParticle.sks */,
 				28A43B631D5906C1001D20B9 /* scoreParticle.sks */,
 				28A43B641D5906C1001D20B9 /* bokeh.png */,
@@ -634,6 +634,7 @@
 				2827D95C1D698B3B005C0494 /* soundSeven.caf in Resources */,
 				284C59751D47E434009DBCE0 /* GameOver.sks in Resources */,
 				28A43B651D5906C1001D20B9 /* scoreParticle.sks in Resources */,
+				286301501DC9C0CD007A1573 /* Assets.xcassets in Resources */,
 				280868B61D3506330068B702 /* LaunchScreen.storyboard in Resources */,
 				284C596D1D47E421009DBCE0 /* StartScene.sks in Resources */,
 				284C59711D47E42A009DBCE0 /* GameScene.sks in Resources */,
@@ -647,7 +648,6 @@
 				2827D95E1D698B3B005C0494 /* soundTen.caf in Resources */,
 				28A43B661D5906C1001D20B9 /* bokeh.png in Resources */,
 				2827D9581D698B3B005C0494 /* soundFive.caf in Resources */,
-				280868B31D3506330068B702 /* Assets.xcassets in Resources */,
 				280868B11D3506330068B702 /* Main.storyboard in Resources */,
 				2827D9571D698B3B005C0494 /* soundEight.caf in Resources */,
 				2827D9601D698B3B005C0494 /* soundTwo.caf in Resources */,

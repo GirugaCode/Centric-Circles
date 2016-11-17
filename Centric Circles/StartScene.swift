@@ -11,7 +11,7 @@ import SpriteKit
 
 
 
-class StartScene: SKScene {
+class StartScene: SKScene{
     
     var startPlay : SKSpriteNode!
     var startBackground : SKSpriteNode!
@@ -56,5 +56,7 @@ class StartScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
+    
+    
     
 }

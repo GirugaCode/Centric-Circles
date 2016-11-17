@@ -35,7 +35,9 @@ class GameScene: SKScene {
     var gameOverRunned = false
     var innerCircleColor = UIColor.grayColor()
     var outerCircleColor = UIColor.whiteColor()
-    
+    var challengeLabelOne: SKLabelNode!
+    var challengeLabelTwo: SKLabelNode!
+    var challengeLabelThree: SKLabelNode!
     
     
     /* Randomizer for the outer circle */
@@ -67,6 +69,10 @@ class GameScene: SKScene {
         
         /* Connects to my highscore string (make sure it was after the scoreLabel code connection) */
         scoreLabel.text = String(gameManager.newscore)
+        
+        challengeLabelOne = childNodeWithName("challengeLabelOne") as! SKLabelNode
+        challengeLabelTwo = childNodeWithName("challengeLabelTwo") as! SKLabelNode
+        challengeLabelThree = childNodeWithName("challengeLabelThree") as! SKLabelNode
         
         /* Instruction animation */
         animations()
@@ -145,7 +151,7 @@ class GameScene: SKScene {
         /* Retracts the circle if it hits a certain scale of the screen */
         let reverseScale = SKAction.scaleTo(0.057, duration: 1.5)
         
-        if innerCircle.xScale >= 0.75 {
+        if innerCircle.xScale >= 0.76 {
             innerCircle.runAction(reverseScale)
             
         }
@@ -197,16 +203,17 @@ class GameScene: SKScene {
             
             /* Random flat color generator */
             
-            gameBackground.color = RandomFlatColorWithShade(.Dark)
-            
-            
             outerCircleColor = RandomFlatColorWithShade(.Light)
             
+            innerCircleColor = RandomFlatColorWithShade(.Light)
             
-            innerCircleColor = ComplementaryFlatColorOf(outerCircleColor)
+            gameBackground.color = RandomFlatColorWithShade(.Dark)
+            //ContrastColorOf(innerCircleColor, returnFlat: true)
             
-         
-    
+            if innerCircleColor == outerCircleColor {
+                innerCircleColor = RandomFlatColor()
+                outerCircleColor = RandomFlatColor()
+            }
             
             /* Checking if colors have changed */
             hasRandomizedColor = true
@@ -214,6 +221,9 @@ class GameScene: SKScene {
             /* Making inner circle and outer circle into .color properties */
             innerCircle.color = innerCircleColor
             outerCircle.color = outerCircleColor
+
+            
+
             
             
         }
@@ -317,6 +327,7 @@ class GameScene: SKScene {
         
         /* Change background color Red */
         gameBackground.color = UIColor.redColor()
+        
             
         //UIColor(red:204/255, green: 65/255, blue: 101/255, alpha: 1.0)
         
@@ -360,5 +371,6 @@ class GameScene: SKScene {
         
     
     }
+    
     
 }

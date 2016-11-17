@@ -17,23 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="2Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MGC-Gq-1Vj">
-                                <rect key="frame" x="159" y="154" width="283" height="292"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="RyRy Games Logo 2" translatesAutoresizingMaskIntoConstraints="NO" id="utr-CM-zPH">
+                                <rect key="frame" x="1" y="-109" width="599" height="818"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MGC-Gq-1Vj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="24z-y2-IEx"/>
-                            <constraint firstItem="MGC-Gq-1Vj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YVP-Z8-pZq"/>
+                            <constraint firstItem="utr-CM-zPH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kMO-Jh-JYT"/>
+                            <constraint firstItem="utr-CM-zPH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="v7E-Vn-YXV"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-876" y="-129"/>
+            <point key="canvasLocation" x="-1204" y="-279"/>
         </scene>
     </scenes>
     <resources>
-        <image name="2Logo" width="283" height="292"/>
+        <image name="RyRy Games Logo 2" width="599" height="817"/>
     </resources>
 </document>
